@@ -14,10 +14,19 @@ btn.addEventListener("click", function(){
       ul.appendChild(item);
       inp.value= "";
 });
-let dltBtns = document.querySelectorAll(".delete");
-for(dltBtn of dltBtns){
-dltBtn.addEventListener("click" , function(){
-  let par = this.parentElement;
-  par.remove();
-})
-};
+
+ul.addEventListener("click", function(event){
+  if(event.target.nodeName == "BUTTON"){
+    let listItem = event.target.parentElement;
+    listItem.remove();
+  }
+});
+
+
+// let dltBtns = document.querySelectorAll(".delete"); //we can not apply eventListener on new Element
+// for(dltBtn of dltBtns){
+// dltBtn.addEventListener("click" , function(){
+//   let par = this.parentElement;
+//   par.remove();
+// })
+// };
